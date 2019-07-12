@@ -63,15 +63,13 @@
   <div class="demo"></div>
 
   <div class="setup-open">
-    <img src="./img/user-1.jpg" class="setup-open-icon">
+    <img src="./img/user-1.jpg" class="setup-open-icon" tabindex="0">
   </div>
 </header>
 
 <div class="overlay setup hidden">
   <form class="setup-wizard-form"
-        method="post"
-        enctype="multipart/form-data"
-        autocomplete="off">
+        method="post">
 
     <div class="setup-title">
       <div class="setup-user">
@@ -80,13 +78,13 @@
           <input type="file" name="avatar">
         </div>
         <label>
-          <input type="text" name="username"
+          <input type="text" name="username" minlength="2" 
                  maxlength="25" required
                  class="setup-user-name" value="Синий Пендальф"/>
         </label>
       </div>
 
-      <span class="setup-close">&times;</span>
+      <span class="setup-close" tabindex="0">&times;</span>
     </div>
 
 
@@ -162,7 +160,7 @@
 
 <footer>
   <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
-                                                              width="130">Сделано в HTML Academy</a>в 2017 году</p>
+                                                              width="130">Сделано в HTML Academy</a>в 2019 году</p>
 </footer>
 
 <template id="similar-wizard-template" style="display: none">
