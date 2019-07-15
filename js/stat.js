@@ -1,6 +1,6 @@
 'use strict';
-
-window.renderStatistics = function (ctx, names, times) {
+(function () {
+  window.renderStatistics = function (ctx, names, times) {
   var cloud = {
     x: 100,
     y: 10,
@@ -110,3 +110,5 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillText(names[index], column_X, nameLabelY);
   });
 };
+
+})();
