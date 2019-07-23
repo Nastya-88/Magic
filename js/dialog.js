@@ -4,11 +4,12 @@
 (function () {
 
 	// открытие и закрытие окна
-	var setup = document.querySelector('.setup');
+	window.setup = document.querySelector('.setup');
 	var setupOpen = document.querySelector('.setup-open');
 	var setupClose = document.querySelector('.setup-close');
 	var setupOpenIcon = document.querySelector('.setup-open-icon');
 	var dialogHandler = document.querySelector('.upload');
+	var form = document.querySelector('.setup-wizard-form');
 	var ESC_KEYCODE = 27;
 	var ENTER_KEYCODE = 13;
 	
@@ -38,12 +39,12 @@
 		}
 	};
 	var openPopup = function() {
-		setup.classList.remove('hidden');
+		window.setup.classList.remove('hidden');
 		document.addEventListener('keydown', onPopupEscPress);
 	};
 
 	var closePopup = function() {
-		setup.classList.add('hidden');
+		window.setup.classList.add('hidden');
 		document.removeEventListener('keydown', onPopupEscPress);
 	};
 
@@ -76,8 +77,8 @@
 			y: moveEvt.clientY
 		};
 
-		setup.style.top = (setup.offsetTop - shift.y) + 'px';
-		setup.style.left = (setup.offsetLeft - shift.x) + 'px';
+		window.setup.style.top = (window.setup.offsetTop - shift.y) + 'px';
+		window.setup.style.left = (window.setup.offsetLeft - shift.x) + 'px';
 	};
 
 	var onMouseUp = function (upEvt) {
@@ -98,8 +99,20 @@
 
 	document.addEventListener('mousemove', onMouseMove);
 	document.addEventListener('mouseup', onMouseUp);
+
 	});
+
+	
+
+	// form.addEventListener('submit', function (evt) {
+	// 	window.upload(new FormData(form), function(response) {
+	// 		window.setup.classList.add('hidden');
+	// 	})
+	// 	evt.preventDefault();
+	// });
 })();
+
+
 
 
 
