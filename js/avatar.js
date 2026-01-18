@@ -2,7 +2,7 @@
 
 // avatar.js
 
-(function() {
+(function () {
 	var FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
 	var fileChooser = document.querySelector('.upload input[type=file]');
 	var preview = document.querySelector('.setup-user-pic');
@@ -10,7 +10,7 @@
 		var file = fileChooser.files[0];
 		var fileName = file.name.toLowerCase();
 
-		var matches = FILE_TYPES.some(function(it) {
+		var matches = FILE_TYPES.some(function (it) {
 			return fileName.endsWith(it);
 		});
 
