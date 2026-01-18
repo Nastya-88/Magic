@@ -2,27 +2,27 @@
 
 
 (function () {
-  var popup = document.querySelector('.setup');
-  var setupForm = popup.querySelector('.setup-wizard-form');
-  var setupFormBtn = setupForm.querySelector('.setup-submit');
+  const popup = document.querySelector('.setup');
+  const setupForm = popup.querySelector('.setup-wizard-form');
+  const setupFormBtn = setupForm.querySelector('.setup-submit');
 
-  var wizard = setupForm.querySelector('.setup-wizard-appearance');
-  var wizardCoat = wizard.querySelector('.wizard-coat');
-  var wizardCoatColor = wizard.querySelector('input[name="coat-color"]');
-  var wizardEyes = wizard.querySelector('.wizard-eyes');
-  var wizardEyesColor = wizard.querySelector('input[name="eyes-color"]');
-  var fireball = document.querySelector('.setup-fireball-wrap');
-  var fireballColor = fireball.querySelector('input[name="fireball-color"]');
+  const wizard = setupForm.querySelector('.setup-wizard-appearance');
+  const wizardCoat = wizard.querySelector('.wizard-coat');
+  const wizardCoatColor = wizard.querySelector('input[name="coat-color"]');
+  const wizardEyes = wizard.querySelector('.wizard-eyes');
+  const wizardEyesColor = wizard.querySelector('input[name="eyes-color"]');
+  const fireball = document.querySelector('.setup-fireball-wrap');
+  const fireballColor = fireball.querySelector('input[name="fireball-color"]');
 
 
-  var getNextColor = function (colors, currentColor) {
-    var currentColorIndex = colors.indexOf(currentColor);
+  const getNextColor = function (colors, currentColor) {
+    const currentColorIndex = colors.indexOf(currentColor);
 
     return currentColorIndex !== colors.length - 1 ? colors[currentColorIndex + 1] : colors[0];
   };
 
 
-  var onCoatClick = function () {
+  const onCoatClick = function () {
     wizardCoatColor.value = getNextColor(window.util.WizardsProps.COAT_COLORS, wizardCoatColor.value);
     wizardCoat.style.fill = wizardCoatColor.value;
 
@@ -31,7 +31,7 @@
     });
   };
 
-  var onEyesClick = function () {
+  const onEyesClick = function () {
     wizardEyesColor.value = getNextColor(window.util.WizardsProps.EYES_COLORS, wizardEyesColor.value);
     wizardEyes.style.fill = wizardEyesColor.value;
 
@@ -40,23 +40,23 @@
     });
   };
 
-  var onFireballClick = function () {
+  const onFireballClick = function () {
     fireballColor.value = getNextColor(window.util.WizardsProps.FIREBALL_COLORS, fireballColor.value);
     fireball.style.background = fireballColor.value;
   };
 
 
-  var sendForm = function () {
+  const sendForm = function () {
     popup.classList.add('hidden');
     setupFormBtn.disabled = false;
   };
 
-  var showError = function (errorMessage) {
+  const showError = function (errorMessage) {
     window.util.showError(errorMessage);
     setupFormBtn.disabled = false;
   };
 
-  var onFormSubmit = function (evt) {
+  const onFormSubmit = function (evt) {
     evt.preventDefault();
     setupFormBtn.disabled = true;
 
@@ -77,7 +77,7 @@
 
 
 
-	
+
 
 
 
